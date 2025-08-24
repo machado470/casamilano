@@ -1,0 +1,1978 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- SUBSTITUIR o bloco de fontes + tailwind duplicado por isso -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<meta name="description" content="Casamilano: ambientes planejados com design, acabamento premium e instalação limpa. Solicite seu orçamento.">
+<meta property="og:title" content="Casamilano Ambientes Planejados">
+<meta property="og:description" content="Design sob medida, acabamento premium, instalação limpa.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>
+
+.whatsapp-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #25D366, #1fa851);
+  border-radius: 50%;
+  padding: 18px;
+  box-shadow: 0px 4px 15px rgba(37, 211, 102, 0.4);
+  cursor: pointer;
+  z-index: 10000;
+  animation: pulse 2s infinite;
+  transition: all 0.3s ease;
+}
+.whatsapp-toggle:hover {
+  transform: scale(1.1);
+}
+.whatsapp-toggle img {
+  width: 40px;
+  height: 40px;
+}
+.whatsapp-box {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  width: 300px;
+  box-shadow: 0px 4px 25px rgba(37, 211, 102, 0.3);
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 10000;
+}
+.whatsapp-box.show {
+  display: flex;
+}
+.whatsapp-header {
+  font-size: 16px;
+  font-weight: bold;
+  color: #014421;
+}
+.whatsapp-box textarea {
+  resize: none;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 14px;
+}
+.whatsapp-box button {
+  background-color: #25D366;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  border: none;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+}
+.whatsapp-box button:hover {
+  background-color: #1fa851;
+}
+.whatsapp-close {
+  align-self: flex-end;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #014421;
+}
+@keyframes pulse {
+  0%,100% { transform: scale(1) }
+  50% { transform: scale(1.1) }
+}
+
+
+
+/*  Melhorias para Seção de Depoimentos */
+#depoimentos .depoimento-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0px 6px 18px rgba(1, 68, 33, 0.08);
+}
+#depoimentos .depoimento-card:hover {
+  box-shadow: 0px 12px 30px rgba(1, 68, 33, 0.15);
+  transform: translateY(-4px);
+}
+#depoimentos .depoimento-card .foto-cliente {
+  border-radius: 50%;
+  border: 2px solid #014421;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+#depoimentos .depoimento-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #014421;
+}
+#depoimentos .depoimento-card .stars {
+  font-size: 1rem;
+  color: #014421;
+}
+#depoimentos .depoimento-card p {
+  font-size: 1rem;
+  font-style: italic;
+  color: #333;
+  line-height: 1.5;
+}
+#depoimentos .depoimento-card .depoimento-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+
+
+.bloco-sobre {
+  padding: 60px 0;
+  background-color: #e8f0e1;
+}
+
+.container-sobre {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.imagem-sobre img {
+  width: 330px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.conteudo-sobre {
+  flex: 1;
+  min-width: 300px;
+}
+
+.conteudo-sobre h2 {
+  font-size: 2.2rem;
+  color: #134e2c;
+  margin-bottom: 15px;
+}
+
+.conteudo-sobre p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.cards-sobre {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card-sobre {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  flex: 1;
+  min-width: 220px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.card-sobre .emoji {
+  font-size: 24px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.avaliacao {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.avaliacao img {
+  width: 24px;
+  margin-right: 8px;
+}
+
+
+
+        .bloco-sobre {
+  padding: 4rem 2rem;
+  background: radial-gradient(circle, #e5eeda, #d0dec3);
+}
+
+.container-sobre {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.video-box video {
+  width: 300px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+.content-sobre {
+  max-width: 650px;
+  flex: 1;
+}
+
+.content-sobre h2 {
+  font-size: 2.4rem;
+  color: #114322;
+  margin-bottom: 1rem;
+}
+
+.content-sobre h2 span {
+  color: #114322;
+  font-weight: bold;
+}
+
+.content-sobre p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #2e2e2e;
+  margin-bottom: 2rem;
+}
+
+.cards-sobre {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  flex: 1;
+  min-width: 200px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card i {
+  font-size: 2rem;
+  color: #114322;
+  margin-bottom: 0.5rem;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  color: #114322;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* Selo */
+.selo-confianca {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.selo-confianca img {
+  height: 40px;
+}
+
+.selo-confianca span {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #114322;
+}
+
+
+  .scroll-in {
+    transition: all 0.8s ease;
+  }
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  z-index: -1; /* Coloca atrás do conteúdo */
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4); /* Escurece para dar contraste ao texto */
+}
+
+        .video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 8rem 2rem;
+  color: #fff;
+}
+
+        @keyframes zoomSlow {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* 🔹 BLOCO 2: Estilo do WhatsApp Chatbot */
+
+#chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Botão flutuante */
+#chatbot-btn {
+  background-color: #25D366;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#chatbot-btn img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Badge de notificação */
+.badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: red;
+  color: white;
+  font-size: 11px;
+  padding: 3px 6px;
+  border-radius: 50%;
+}
+
+/* Fundo escurecido com blur */
+#chatbot-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+}
+
+/* Caixa de opções */
+#chatbot-box {
+  display: none;
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  width: 250px;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Título do menu */
+#chatbot-box h4 {
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #014421;
+}
+
+/* Opções do menu */
+#chatbot-box label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #333;
+}
+
+#chatbot-box input[type="radio"] {
+  margin-right: 8px;
+}
+
+/* Animação suave */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+
+:root {
+  --kaitoke-green: #014421;
+  --moon-mist: #D0D8C3;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--moon-mist);
+  color: var(--kaitoke-green);
+}
+
+header {
+  background-color: var(--kaitoke-green);
+  color: var(--moon-mist);
+}
+
+.btn-primary {
+  background-color: var(--kaitoke-green);
+  color: var(--moon-mist);
+}
+
+.btn-primary:hover {
+  background-color: #013312; /* Um tom mais escuro para hover */
+}
+
+.btn-outline {
+  border-color: var(--kaitoke-green);
+  color: var(--kaitoke-green);
+}
+.btn-outline:hover {
+  background-color: var(--kaitoke-green);
+  color: var(--moon-mist);
+}
+
+
+
+ /* Animações customizadas */
+  @keyframes fadeInUp {
+    0%   { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes zoomSlow {
+    0%,100% { transform: scale(1); }
+    50%     { transform: scale(1.05); }
+  }
+
+  .animate-fadeInUp { animation: fadeInUp 0.8s ease-out forwards; }
+  .animate-zoomSlow  { animation: zoomSlow 20s ease-in-out infinite; }
+  .animation-delay-500  { animation-delay: 0.5s; }
+  .animation-delay-1000 { animation-delay: 1s; }
+  .animation-delay-1500 { animation-delay: 1.5s; }
+
+  .bg-gradient-radial {
+    background-image: radial-gradient(circle at center, var(--tw-gradient-stops));
+  }
+
+
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #3C463E;
+            color: #FFFFFF;
+            scroll-behavior: smooth;
+        }
+        .btn-primary {
+            background-color: #837467;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary:hover {
+            background-color: #6e6259;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        .btn-outline {
+            border: 2px solid #837467;
+            color: #837467;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-outline:hover {
+            background-color: #837467;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        .section-title {
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #837467;
+        }
+        .environment-card {
+            transition: all 0.4s ease;
+            border: 1px solid rgba(131, 116, 103, 0.3);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .environment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+            border-color: #837467;
+        }
+        .testimonial-card {
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+        .mobile-menu {
+            transition: all 0.3s ease;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #837467;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .form-input {
+            transition: all 0.3s ease;
+        }
+        .form-input:focus {
+            border-color: #837467;
+            box-shadow: 0 0 0 3px rgba(131, 116, 103, 0.3);
+        }
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: translateY(-3px);
+        }
+        .carousel-slide {
+            transition: transform 0.5s ease-in-out;
+        }
+        @media (max-width: 768px) {
+            .desktop-menu {
+                display: none;
+            }
+        }
+        @media (min-width: 769px) {
+            .mobile-menu-button {
+                display: none;
+            }
+        }
+        /* Animações */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        
+        /* Scroll Behavior */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+        
+        /* Scrollbar personalizada */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #3C463E;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #837467;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6e6259;
+        }
+</style>
+
+</head>
+
+<body>
+
+
+<!-- ✅ HEADER APRIMORADO V2 -->
+<style>
+  :root{scroll-behavior:smooth;scroll-padding-top:72px}
+  @media (min-width:768px){:root{scroll-padding-top:80px}}
+  @media (prefers-reduced-motion: reduce){*{scroll-behavior:auto}}
+</style>
+
+<header class="bg-[#D0D8C3] text-[#014421] fixed top-0 left-0 w-full shadow-md z-50" role="banner">
+  <!-- Link de pulo acessível -->
+  <a href="#conteudo" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white/90 text-[#014421] px-3 py-1 rounded">
+    Pular para o conteúdo
+  </a>
+
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
+    <!-- Logo -->
+    <a href="#inicio" class="text-2xl font-bold">Casamilano</a>
+
+    <!-- Menu Desktop -->
+    <nav class="hidden md:flex space-x-6 items-center font-sans" role="navigation" aria-label="Principal" data-nav="desktop">
+      <a href="#inicio" class="hover:opacity-80 transition">Início</a>
+      <a href="#sobre" class="hover:opacity-80 transition">Sobre</a>
+      <a href="#ambientes" class="hover:opacity-80 transition">Ambientes</a>
+      <a href="#portfolio" class="hover:opacity-80 transition">Portfólio</a>
+      <a href="#depoimentos" class="hover:opacity-80 transition">Depoimentos</a>
+      <a href="#contato" class="hover:opacity-80 transition">Contato</a>
+      <a href="https://wa.me/5548996103887?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+         target="_blank" rel="noopener noreferrer"
+         class="bg-[#014421] text-[#D0D8C3] font-medium rounded-full px-4 py-2 hover:bg-[#013516] hover:scale-105 transition">
+        Solicitar Orçamento
+      </a>
+    </nav>
+
+    <!-- Botão Mobile -->
+    <button id="menu-toggle"
+            class="md:hidden flex items-center justify-center text-[#014421] focus:outline-none focus:ring-2 focus:ring-[#014421]/40 rounded"
+            aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu">
+      <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Overlay para fechar no clique fora -->
+  <div id="menu-overlay" class="hidden fixed inset-0 z-40 bg-black/40 md:hidden"></div>
+
+  <!-- Menu Mobile -->
+  <div id="mobile-menu" class="hidden md:hidden absolute left-0 top-full w-full bg-[#D0D8C3] border-t border-[#014421]/10 shadow-lg">
+    <nav class="flex flex-col space-y-3 p-4 text-[#014421] font-sans" aria-label="Menu mobile">
+      <a href="#inicio" class="hover:opacity-80">Início</a>
+      <a href="#sobre" class="hover:opacity-80">Sobre</a>
+      <a href="#ambientes" class="hover:opacity-80">Ambientes</a>
+      <a href="#portfolio" class="hover:opacity-80">Portfólio</a>
+      <a href="#depoimentos" class="hover:opacity-80">Depoimentos</a>
+      <a href="#contato" class="hover:opacity-80">Contato</a>
+      <a href="https://wa.me/5548996103887?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+         target="_blank" rel="noopener noreferrer"
+         class="bg-[#014421] text-[#D0D8C3] rounded-full py-2 text-center hover:bg-[#013516]">
+        Solicitar Orçamento
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- ✅ JS: menu acessível + links ativos -->
+<script>
+  (function () {
+    const btn = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('menu-overlay');
+
+    const setOpen = (open) => {
+      menu.classList.toggle('hidden', !open);
+      overlay.classList.toggle('hidden', !open);
+      btn.setAttribute('aria-expanded', String(open));
+      document.documentElement.classList.toggle('overflow-hidden', open);
+      if (open) menu.querySelector('a')?.focus();
+    };
+
+    btn?.addEventListener('click', () => setOpen(menu.classList.contains('hidden')));
+    overlay?.addEventListener('click', () => setOpen(false));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+
+    // Destaque de link conforme a seção visível
+    const links = document.querySelectorAll('nav a[href^="#"]');
+    const byHash = (h) => Array.from(links).filter(a => a.getAttribute('href') === h);
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const hash = '#' + e.target.id;
+        links.forEach(a => a.classList.remove('font-semibold', 'opacity-60'));
+        byHash(hash).forEach(a => a.classList.add('font-semibold'));
+        links.forEach(a => { if (a.getAttribute('href') !== hash) a.classList.add('opacity-60'); });
+      });
+    }, { rootMargin: '0px 0px -70% 0px', threshold: 0.25 });
+
+    document.querySelectorAll('section[id]').forEach(s => io.observe(s));
+  })();
+</script>
+
+
+
+<!-- 🔰 HERO PROFISSIONAL CASAMILANO — V2 -->
+<section id="inicio" class="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-black pt-28 lg:pt-0">
+  <!-- 🎥 Vídeo de fundo (carrega só quando aparece) -->
+  <video
+    class="hero-video absolute inset-0 w-full h-full object-cover brightness-[0.3] hidden md:block"
+    muted playsinline loop preload="metadata" poster="images/hero-poster.jpg" aria-hidden="true">
+    <source data-src="videosmarcenaria.mp4" type="video/mp4">
+  </video>
+
+  <!-- 🖼️ Fallback imagem para mobile -->
+  <div class="absolute inset-0 w-full h-full bg-cover bg-center md:hidden" style="background-image:url('images/fallback.jpg');" aria-hidden="true"></div>
+
+  <!-- 💬 Conteúdo -->
+  <div class="relative z-10 max-w-7xl w-full px-6 lg:px-16 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-white">
+
+    <!-- 📝 Texto principal -->
+    <div class="text-center lg:text-left space-y-6">
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight font-sans drop-shadow-xl">
+        O projeto <span class="text-[#F5F1E9]">perfeito</span> para sua casa começa <span class="text-[#D0D8C3]">aqui</span>
+      </h1>
+
+      <div class="text-[clamp(56px,12vw,110px)] font-black tracking-tight text-[#D0D8C3] drop-shadow-lg leading-none">
+        até 36x
+      </div>
+
+      <div class="inline-flex items-center gap-2 bg-[#014421] text-white text-sm px-6 py-2 rounded-full uppercase tracking-wider shadow-xl">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+        </svg>
+        Parcelamento exclusivo no boleto
+      </div>
+
+      <div class="pt-6 space-y-1">
+        <p class="text-lg font-medium">Ou sua casa completa sob medida</p>
+        <p class="text-sm text-white/70">a partir de</p>
+        <p class="text-4xl font-bold text-[#D0D8C3]">R$ 34.900</p>
+        <p class="text-xs text-white/60">Sujeito à aprovação de crédito. Condições podem variar.</p>
+      </div>
+    </div>
+
+    <!-- 🧾 Formulário -->
+    <div class="bg-white text-[#014421] p-8 md:p-10 rounded-2xl shadow-2xl w-full max-w-md">
+      <h3 class="text-2xl font-bold font-sans text-center uppercase tracking-wide">Solicite seu orçamento</h3>
+      <div class="w-10 h-1 bg-[#014421] mx-auto my-4 rounded-full"></div>
+      <p class="text-sm mb-6 text-center text-[#014421]/70">Leva menos de 1 minuto</p>
+
+      <form id="formulario" class="space-y-4" novalidate>
+        <!-- honeypot anti-spam -->
+        <input type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" class="hidden">
+
+        <label class="sr-only" for="nome">Nome completo</label>
+        <input id="nome" name="nome" type="text" placeholder="Nome completo*" required
+          autocomplete="name" enterkeyhint="next"
+          class="w-full p-4 rounded-md bg-[#F1F5F2] border border-[#D0D8C3] placeholder-[#014421]/60 focus:ring-2 focus:ring-[#837467] outline-none"/>
+
+        <label class="sr-only" for="email">Melhor e-mail</label>
+        <input id="email" name="email" type="email" placeholder="Melhor e-mail*" required
+          autocomplete="email" inputmode="email" enterkeyhint="next"
+          class="w-full p-4 rounded-md bg-[#F1F5F2] border border-[#D0D8C3] placeholder-[#014421]/60 focus:ring-2 focus:ring-[#837467] outline-none"/>
+
+        <label class="sr-only" for="observacao">Observação</label>
+        <textarea id="observacao" name="observacao" rows="4"
+          placeholder="Descreva seu projeto (opcional)"
+          class="w-full p-4 rounded-md bg-[#F1F5F2] border border-[#D0D8C3] placeholder-[#014421]/60 focus:ring-2 focus:ring-[#837467] outline-none resize-none"></textarea>
+
+        <label class="flex items-start gap-2 text-xs text-[#014421]/80">
+          <input id="consent" type="checkbox" required class="mt-1">
+          <span>Concordo em ser contactado(a) por WhatsApp/e-mail conforme a <a href="#lgpd" class="underline">política de privacidade</a>.</span>
+        </label>
+
+        <div id="msg" class="text-sm text-center font-semibold text-yellow-600 min-h-[1.25rem]" aria-live="polite"></div>
+
+        <button type="submit"
+          class="w-full py-3 bg-[#014421] text-white font-bold uppercase rounded-md hover:bg-[#0d5533] transition-all duration-300 shadow-md">
+          Enviar
+        </button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // ===== Vídeo do hero: lazy + respeito a "reduzir movimento"
+  (function(){
+    const video = document.querySelector('.hero-video');
+    if (!video) return;
+
+    const enable = () => {
+      const src = video.querySelector('source[data-src]');
+      if (src && !src.src) { src.src = src.dataset.src; video.load(); }
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        video.play().catch(()=>{ /* silêncio elegante */ });
+      }
+    };
+
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e => { if (e.isIntersecting){ enable(); io.disconnect(); } });
+      }, { rootMargin: '200px' });
+      io.observe(video);
+    } else {
+      enable(); // fallback
+    }
+
+    // Pausa se usuário prefere menos movimento
+    const m = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const onChange = () => { if (m.matches) video.pause(); };
+    m.addEventListener?.('change', onChange);
+  })();
+
+  // ===== Animação de entrada discreta (só se tiver scroll-in)
+  (function(){
+    const els = document.querySelectorAll('.scroll-in');
+    if (!els.length || !('IntersectionObserver' in window)) return;
+    const io = new IntersectionObserver(es => {
+      es.forEach(e => { if (e.isIntersecting){ e.target.style.opacity=1; e.target.style.transform='translateY(0)'; io.unobserve(e.target); } });
+    }, { threshold: 0.2 });
+    els.forEach(el => { el.style.opacity=0; el.style.transform='translateY(40px)'; io.observe(el); });
+  })();
+
+  // ===== Form → WhatsApp com validação, consentimento e honeypot
+  (function(){
+    const form = document.getElementById('formulario');
+    if (!form) return;
+    const msg = document.getElementById('msg');
+    const PHONE = '5548996103887'; // número único do site
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      msg.textContent = '';
+
+      // Honeypot
+      if (form.website?.value) return;
+
+      const nome = form.nome.value.trim();
+      const email = form.email.value.trim();
+      const obs = (form.observacao.value || '').trim();
+      const consent = document.getElementById('consent').checked;
+
+      if (!nome || !email) { msg.textContent = 'Preencha nome e e-mail.'; return; }
+      if (!consent) { msg.textContent = 'Confirme o consentimento para continuar.'; return; }
+
+      const mensagem =
+`👋 Olá! Gostaria de um orçamento.
+
+👤 Nome: ${nome}
+📧 E-mail: ${email}
+📝 Observação: ${obs || 'Nenhuma.'}`;
+
+      const url = `https://wa.me/${PHONE}?text=${encodeURIComponent(mensagem)}`;
+      window.open(url, '_blank', 'noopener');
+      msg.textContent = 'Abrindo WhatsApp…';
+    });
+  })();
+</script>
+
+
+
+<!-- 💼 BLOCO AMBIENTES — V2 (sem CLS, acessível, consistente) -->
+<section id="sobre" class="py-28 bg-[#D0D8C3] text-[#3E3E3E] font-sans">
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+
+    <!-- 📸 IMAGEM DE AMBIENTE (figure + aspect para segurar layout) -->
+    <figure class="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.1)]">
+      <img
+        src="sobre.png"
+        alt="Projeto Casamilano em ambiente real"
+        loading="lazy"
+        decoding="async"
+        class="absolute inset-0 w-full h-full object-cover" />
+      <figcaption class="absolute bottom-4 right-4 bg-white/80 text-sm text-[#837467] px-4 py-2 rounded-xl shadow-md backdrop-blur-md">
+        Execução real de projeto Casamilano
+      </figcaption>
+    </figure>
+
+    <!-- ✍️ TEXTO INSTITUCIONAL -->
+    <div class="text-center lg:text-left">
+      <h2 class="text-5xl md:text-6xl font-extrabold text-[#014421] leading-tight tracking-tight mb-8">
+        Ambientes com <span class="text-[#837467]">identidade própria</span>
+      </h2>
+
+      <p class="text-lg md:text-xl leading-relaxed mb-6">
+        Há mais de <strong class="text-[#014421]">10 anos</strong>, a <strong>Casamilano</strong> transforma ideias em ambientes que contam histórias. Nossos projetos unem
+        <em class="text-[#837467] not-italic">autenticidade, elegância e funcionalidade</em> — sob medida para você.
+      </p>
+
+      <p class="text-lg md:text-xl text-[#4B4B4B] leading-relaxed mb-6">
+        Com um olhar criterioso para o <strong>design inteligente</strong> e os <strong>acabamentos impecáveis</strong>, criamos espaços que combinam conforto, estética e propósito. Nada é padrão. Tudo tem alma.
+      </p>
+
+      <p class="text-base md:text-lg italic text-[#837467] mb-10">
+        Cada detalhe é pensado para durar — e emocionar.
+      </p>
+
+      <!-- ✅ Selo de Qualidade -->
+      <div class="inline-flex items-center gap-3 px-6 py-3 bg-[#014421]/90 text-white rounded-2xl font-semibold text-base md:text-lg shadow-xl backdrop-blur-md">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 13l4 4L19 7"/>
+        </svg>
+        Mais de 10 anos entregando qualidade sob medida
+      </div>
+    </div>
+  </div>
+
+  <!-- 🌟 BENEFÍCIOS -->
+  <section aria-labelledby="titulo-beneficios" class="mt-24 px-6 max-w-7xl mx-auto text-center">
+    <h3 id="titulo-beneficios" class="sr-only">Benefícios da Casamilano</h3>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- 1 -->
+      <a href="#contato" class="block bg-[#F5F1E9] rounded-2xl p-6 border border-[#D0D8C3] shadow-[0_2px_4px_rgba(0,0,0,0.05),_0_8px_16px_rgba(0,0,0,0.06)] transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:ring-2 hover:ring-[#014421]/30 group" aria-label="Veja detalhes sobre móveis sob medida">
+        <svg class="w-12 h-12 mx-auto mb-3 text-[#014421] transition-transform group-hover:rotate-6 group-hover:scale-110" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+        <p class="font-semibold text-[#014421] text-lg">Móveis sob medida</p>
+        <p class="text-sm text-[#555] mt-1 leading-snug">100% personalizados</p>
+      </a>
+
+      <!-- 2 -->
+      <a href="#contato" class="block bg-[#F5F1E9] rounded-2xl p-6 border border-[#D0D8C3] shadow-[0_2px_4px_rgba(0,0,0,0.05),_0_8px_16px_rgba(0,0,0,0.06)] transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:ring-2 hover:ring-[#014421]/30 group" aria-label="Saiba mais sobre entrega ágil">
+        <svg class="w-12 h-12 mx-auto mb-3 text-[#014421] transition-transform group-hover:rotate-6 group-hover:scale-110" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 3h18v13H3z"/><path d="M16 16a2 2 0 1 0 4 0 2 2 0 0 0-4 0zm-9 0a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/>
+        </svg>
+        <p class="font-semibold text-[#014421] text-lg">Entrega ágil</p>
+        <p class="text-sm text-[#555] mt-1 leading-snug">Prazo médio de 30 a 45 dias</p>
+      </a>
+
+      <!-- 3 -->
+      <a href="#depoimentos" class="block bg-[#F5F1E9] rounded-2xl p-6 border border-[#D0D8C3] shadow-[0_2px_4px_rgba(0,0,0,0.05),_0_8px_16px_rgba(0,0,0,0.06)] transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:ring-2 hover:ring-[#014421]/30 group" aria-label="Veja as avaliações nota 5.0">
+        <svg class="w-12 h-12 mx-auto mb-3 text-[#014421] transition-transform group-hover:rotate-6 group-hover:scale-110" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 17.27L18.18 21l-1.64-7L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+        </svg>
+        <p class="font-semibold text-[#014421] text-lg">Nota 5.0</p>
+        <p class="text-sm text-[#555] mt-1 leading-snug">Avaliação dos clientes</p>
+      </a>
+
+      <!-- 4 -->
+      <a href="#portfolio" class="block bg-[#F5F1E9] rounded-2xl p-6 border border-[#D0D8C3] shadow-[0_2px_4px_rgba(0,0,0,0.05),_0_8px_16px_rgba(0,0,0,0.06)] transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:ring-2 hover:ring-[#014421]/30 group" aria-label="Veja os projetos realizados">
+        <svg class="w-12 h-12 mx-auto mb-3 text-[#014421] transition-transform group-hover:rotate-6 group-hover:scale-110" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6l3 1 2-1 4 1 4-1 3 1v13H3z"/></svg>
+        <p class="font-semibold text-[#014421] text-lg">+200 projetos</p>
+        <p class="text-sm text-[#555] mt-1 leading-snug">Clientes satisfeitos</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- 📱 BOTÃO WHATSAPP -->
+  <div id="fale" class="mt-24 text-center">
+    <a href="https://wa.me/5548996103887?text=Quero%20um%20or%C3%A7amento%20Casamilano"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Conversar com a Casamilano pelo WhatsApp"
+       class="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-[#014421] text-[#D0D8C3] text-lg font-semibold tracking-tight shadow-xl transition-all duration-300 ease-in-out hover:bg-[#0a6031] hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-[#014421]/40">
+      <svg class="w-5 h-5 fill-current animate-pulse-slow" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16 0C7.163 0 0 6.916 0 15.445c0 2.721.743 5.353 2.153 7.675L0 32l9.135-2.942a16.59 16.59 0 0 0 6.865 1.445c8.837 0 16-6.916 16-15.445C32 6.916 24.837 0 16 0zm8.348 22.228c-.343.971-1.994 1.788-2.756 1.895-.715.102-1.608.146-2.591-.178-.596-.198-1.358-.446-2.34-.922-4.123-2.01-6.821-6.607-7.034-6.916-.205-.31-1.68-2.497-1.68-4.765 0-2.267 1.066-3.39 1.447-3.855.343-.437.754-.546 1.006-.546.26 0 .52.003.747.014.239.01.562-.091.88.67.343.827 1.167 2.865 1.271 3.074.102.21.172.469.033.758-.132.29-.2.468-.392.726-.196.257-.412.574-.59.77-.195.211-.4.44-.173.862.226.424 1.002 1.652 2.145 2.676 1.475 1.314 2.715 1.714 3.135 1.904.42.19.664.162.909-.096.238-.252 1.04-1.212 1.321-1.63.278-.42.577-.35.976-.21.397.144 2.507 1.183 2.937 1.397.429.215.715.317.82.496.102.18.102 1.043-.24 2.016z"/>
+      </svg>
+      Fale com a Casamilano
+    </a>
+  </div>
+</section>
+
+<!-- 🔧 JS SAFE: remove erro do slider e animação opcional -->
+<script>
+  // Slider "antes/depois": só inicia se existir.
+  (function(){
+    const handle = document.querySelector('.slider-handle');
+    if (!handle) return; // evita erro quando o elemento não existe
+    const afterImage = handle.previousElementSibling;
+    let isDragging = false;
+
+    handle.addEventListener('mousedown', () => isDragging = true);
+    window.addEventListener('mouseup', () => isDragging = false);
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      const container = handle.closest('.relative');
+      if (!container) return;
+      const rect = container.getBoundingClientRect();
+      let offsetX = e.clientX - rect.left;
+      offsetX = Math.max(0, Math.min(offsetX, rect.width));
+      handle.style.left = offsetX + 'px';
+      if (afterImage) afterImage.style.width = offsetX + 'px';
+    });
+  })();
+
+  // Marca #sobre para animação de entrada (se você já usa .scroll-in global)
+  document.getElementById('sobre')?.classList.add('scroll-in');
+</script>
+
+<!-- 🔰 DIVISOR ENTRE BLOCOS -->
+<div class="bg-[#D0D8C3] py-12">
+  <div class="flex justify-center items-center">
+    <div class="w-full max-w-5xl border-t border-[#b9cbb2] relative">
+      <div class="absolute left-1/2 -translate-x-1/2 -top-3 bg-[#D0D8C3] px-2">
+        <svg class="h-6 w-6 text-[#837467]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2l2.39 7.26L22 9.27l-5.64 4.15L18.76 21 12 17.27 5.24 21l2.38-7.58L2 9.27l7.61-1.01L12 2z" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- 🔳 BLOCO INSTAGRAM (leve, acessível, sem CLS) -->
+<section id="portfolio" class="bg-[#D0D8C3] py-24 px-6 text-[#014421] font-sans">
+  <div class="max-w-7xl mx-auto text-center">
+    <!-- Título -->
+    <h2 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+      Confira nosso <span class="italic text-[#837467] font-medium">Instagram</span>
+    </h2>
+    <p class="text-[#3e3e3e] text-lg md:text-xl mb-10 font-light max-w-2xl mx-auto">
+      Projetos reais, acabamento de alto padrão e atenção aos mínimos detalhes.
+    </p>
+    <div class="w-20 h-[3px] bg-[#014421] mx-auto rounded-full mb-12"></div>
+
+    <!-- GRID -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+
+      <!-- CARD (reutilize para + itens) -->
+      <article class="bg-white rounded-3xl shadow-xl overflow-hidden group">
+        <figure class="relative">
+          <!-- container com aspecto 9:16 segura layout -->
+          <div class="relative aspect-[9/16] w-full overflow-hidden rounded-t-3xl border-b-[3px] border-[#D0D8C3]">
+            <!-- poster visível até o vídeo carregar -->
+            <img src="images/reel1.jpg" alt="Projeto Casamilano em execução" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
+            <video class="reel absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300"
+                   muted playsinline loop preload="none" poster="images/reel1.jpg" aria-label="Reel Casamilano">
+              <source data-src="https://www.marcenariametroquadrado.com.br/imagens/main/videos/reels_1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <figcaption class="sr-only">Reel de ambiente planejado</figcaption>
+        </figure>
+
+        <!-- ações (SVG inline, sem PNG externo) -->
+        <div class="flex justify-between items-center px-5 py-4 text-[18px]">
+          <div class="flex gap-5">
+            <a href="https://instagram.com/casamilano.marcenaria" target="_blank" rel="noopener noreferrer"
+               class="hover:scale-125 transition duration-300" aria-label="Curtir no Instagram">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.1 8.64l-.1.1-.11-.1C9.14 6 4.6 7.48 4.6 11.36c0 2.28 1.86 4.14 4.14 4.14 1.21 0 2.3-.53 3.06-1.37.76.84 1.85 1.37 3.06 1.37 2.28 0 4.14-1.86 4.14-4.14 0-3.88-4.54-5.36-7.6-2.72z"/></svg>
+            </a>
+            <a href="https://instagram.com/casamilano.marcenaria" target="_blank" rel="noopener noreferrer"
+               class="hover:scale-125 transition duration-300" aria-label="Comentar no Instagram">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2z"/></svg>
+            </a>
+            <a href="https://instagram.com/casamilano.marcenaria" target="_blank" rel="noopener noreferrer"
+               class="hover:scale-125 transition duration-300" aria-label="Enviar mensagem no Instagram">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z" fill="currentColor"/></svg>
+            </a>
+          </div>
+          <a href="https://instagram.com/casamilano.marcenaria" target="_blank" rel="noopener noreferrer"
+             class="hover:rotate-12 transition duration-300" aria-label="Salvar no Instagram">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 2h12a2 2 0 012 2v18l-8-5-8 5V4a2 2 0 012-2z"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- CARD 2 -->
+      <article class="bg-white rounded-3xl shadow-xl overflow-hidden group">
+        <figure class="relative">
+          <div class="relative aspect-[9/16] w-full overflow-hidden rounded-t-3xl border-b-[3px] border-[#D0D8C3]">
+            <img src="images/reel2.jpg" alt="Detalhe de marcenaria premium" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
+            <video class="reel absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300"
+                   muted playsinline loop preload="none" poster="images/reel2.jpg" aria-label="Reel Casamilano">
+              <source data-src="https://www.marcenariametroquadrado.com.br/imagens/main/videos/reels_2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <figcaption class="sr-only">Reel de detalhe técnico</figcaption>
+        </figure>
+        <div class="flex justify-between items-center px-5 py-4 text-[18px]">
+          <div class="flex gap-5">
+            <a href="https://instagram.com/casamilano.marcenaria" target="_blank" rel="noopener noreferrer" class="hover:scale-125 transition duration-300" aria-label="Curtir">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.1 8.64l-.1.1-.11-.1C9.14 6 4.6 7.48 4.6 11.36c0 2.28 1.86 4.14 4.14 4.14 1.21 0 2.3-.53 3.06-1.37.76.84 1.85 1.37 3.06 1.37 2.28 0 4.14-1.86 4.14-4.14 0-3.88-4.54-5.36-7.6-2.72z"/></svg>
+            </a>
+            <a href="https://instagram.com/casamilano.marcenaria" target="_blank" rel="noopener noreferrer" class="hover:scale-125 transition duration-300" aria-label="Comentar">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2z"/></svg>
+            </a>
+            <a href="https://instagram.com/casamilano.marcenaria" target="_blank" rel="noopener noreferrer" class="hover:scale-125 transition duration-300" aria-label="Enviar mensagem">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z" fill="currentColor"/></svg>
+            </a>
+          </div>
+          <a href="https://instagram.com/casamilano.marcenaria" target="_blank" rel="noopener noreferrer" class="hover:rotate-12 transition duration-300" aria-label="Salvar">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 2h12a2 2 0 012 2v18l-8-5-8 5V4a2 2 0 012-2z"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- CARD 3 -->
+      <article class="bg-white rounded-3xl shadow-xl overflow-hidden group">
+        <figure class="relative">
+          <div class="relative aspect-[9/16] w-full overflow-hidden rounded-t-3xl border-b-[3px] border-[#D0D8C3]">
+            <img src="images/reel3.jpg" alt="Cozinha planejada com ilha central" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
+            <video class="reel absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300"
+                   muted playsinline loop preload="none" poster="images/reel3.jpg" aria-label="Reel Casamilano">
+              <source data-src="https://www.marcenariametroquadrado.com.br/imagens/main/videos/reels_3.mp4" type="video/mp4">
+            </video>
+          </div>
+          <figcaption class="sr-only">Reel de cozinha planejada</figcaption>
+        </figure>
+        <div class="flex justify-between items-center px-5 py-4 text-[18px]">
+          <div class="flex gap-5">
+            <a href="https://instagram.com/casamilano.marcenaria" target="_blank" rel="noopener noreferrer" class="hover:scale-125 transition duration-300" aria-label="Curtir">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.1 8.64l-.1.1-.11-.1C9.14 6 4.6 7.48 4.6 11.36c0 2.28 1.86 4.14 4.14 4.14 1.21 0 2.3-.53 3.06-1.37.76.84 1.85 1.37 3.06 1.37 2.28 0 4.14-1.86 4.14-4.14 0-3.88-4.54-5.36-7.6-2.72z"/></svg>
+            </a>
+            <a href="https://instagram.com/casamilano.marcenaria" target="_blank" rel="noopener noreferrer" class="hover:scale-125 transition duration-300" aria-label="Comentar">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2z"/></svg>
+            </a>
+            <a href="https://instagram.com/casamilano.marcenaria" target="_blank" rel="noopener noreferrer" class="hover:scale-125 transition duration-300" aria-label="Enviar mensagem">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z" fill="currentColor"/></svg>
+            </a>
+          </div>
+          <a href="https://instagram.com/casamilano.marcenaria" target="_blank" rel="noopener noreferrer" class="hover:rotate-12 transition duration-300" aria-label="Salvar">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 2h12a2 2 0 012 2v18l-8-5-8 5V4a2 2 0 012-2z"/></svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-16">
+      <a href="https://instagram.com/casamilano.marcenaria" target="_blank" rel="noopener noreferrer"
+         class="bg-[#014421] text-white font-semibold rounded-full px-10 py-4 hover:bg-[#012f19] hover:scale-105 transition text-lg shadow-xl inline-block">
+        Ver mais no Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 🔧 Lazy video reels + respeito a "reduzir movimento" -->
+<script>
+  (function(){
+    const prefersReduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    const reels = document.querySelectorAll('video.reel');
+    if (!reels.length) return;
+
+    const loadPlay = (v) => {
+      const src = v.querySelector('source[data-src]');
+      if (src && !src.src) { src.src = src.dataset.src; v.load(); }
+      if (!prefersReduce) {
+        v.play().then(()=>{ v.classList.remove('opacity-0'); v.classList.add('opacity-100'); })
+                .catch(()=>{ v.classList.remove('opacity-0'); });
+      }
+    };
+
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((ents) => {
+        ents.forEach(e => {
+          if (!e.isIntersecting) return;
+          loadPlay(e.target);
+          io.unobserve(e.target);
+        });
+      }, { rootMargin: '200px' });
+      reels.forEach(v => io.observe(v));
+    } else {
+      reels.forEach(loadPlay);
+    }
+  })();
+</script>
+
+
+
+
+
+<!-- 🔰 DIVISOR ENTRE BLOCOS -->
+<div class="bg-[#D0D8C3] py-12">
+  <div class="flex justify-center items-center">
+    <div class="w-full max-w-5xl border-t border-[#b9cbb2] relative">
+      <div class="absolute left-1/2 transform -translate-x-1/2 -top-3 bg-[#D0D8C3] px-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#837467]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2l2.39 7.26L22 9.27l-5.64 4.15L18.76 21 12 17.27 5.24 21l2.38-7.58L2 9.27l7.61-1.01L12 2z" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- BLOCO "NOSSOS AMBIENTES" — V2 (leve, acessível, sem CLS) -->
+<section id="ambientes" class="bg-[#D0D8C3] py-24 px-6 text-[#014421] font-sans" aria-labelledby="ambientes-title">
+  <div class="max-w-7xl mx-auto text-center mb-20">
+    <h2 id="ambientes-title"
+        class="text-5xl font-bold leading-tight"
+        style="font-family:'Playfair Display', ui-serif, Georgia, serif">
+      Nossos <span class="text-[#837467] italic">Ambientes</span>
+    </h2>
+    <div class="w-16 h-1 bg-[#014421] mt-4 mx-auto rounded-full"></div>
+    <p class="mt-4 text-[#3e4e44] text-lg max-w-2xl mx-auto">
+      Cada espaço é planejado com sofisticação, funcionalidade e atenção aos mínimos detalhes.
+    </p>
+  </div>
+
+  <!-- Grid semântico -->
+  <ul role="list" class="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+
+    <!-- ✅ CARD -->
+    <li class="bg-white rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.15)] transition-all duration-300 group">
+      <figure class="relative aspect-[4/3] overflow-hidden rounded-t-3xl">
+        <img src="ambiente.jpg" alt="Quarto planejado com marcenaria sob medida"
+             loading="lazy" decoding="async"
+             class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+        <figcaption class="sr-only">Ambiente de quarto com móveis planejados</figcaption>
+      </figure>
+
+      <div class="p-6 flex flex-col gap-4">
+        <h3 class="text-2xl text-[#014421] font-bold tracking-tight"
+            style="font-family:'Playfair Display', ui-serif, Georgia, serif">
+          Quartos
+        </h3>
+        <p class="text-[#2e2e2e] text-sm leading-relaxed">
+          Funcionalidade, aconchego e móveis planejados para noites tranquilas e ambientes harmônicos.
+        </p>
+        <a href="#contato"
+           class="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-[#014421] hover:text-[#837467] focus:outline-none focus:ring-2 focus:ring-[#014421]/30 rounded transition">
+          Solicitar Projeto
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </li>
+
+    <!-- ✅ CARD -->
+    <li class="bg-white rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.15)] transition-all duration-300 group">
+      <figure class="relative aspect-[4/3] overflow-hidden rounded-t-3xl">
+        <img src="CozinhasPlanejadas.png" alt="Cozinha planejada com armários e iluminação embutida"
+             loading="lazy" decoding="async"
+             class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+        <figcaption class="sr-only">Cozinha planejada sob medida</figcaption>
+      </figure>
+
+      <div class="p-6 flex flex-col gap-4">
+        <h3 class="text-2xl text-[#014421] font-bold tracking-tight"
+            style="font-family:'Playfair Display', ui-serif, Georgia, serif">
+          Cozinhas Planejadas
+        </h3>
+        <p class="text-[#2e2e2e] text-sm leading-relaxed">
+          Beleza funcional e design inteligente para transformar o coração da sua casa.
+        </p>
+        <a href="#contato"
+           class="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-[#014421] hover:text-[#837467] focus:outline-none focus:ring-2 focus:ring-[#014421]/30 rounded transition">
+          Solicitar Projeto
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </li>
+
+    <!-- ✅ CARD -->
+    <li class="bg-white rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.15)] transition-all duration-300 group">
+      <figure class="relative aspect-[4/3] overflow-hidden rounded-t-3xl">
+        <img src="Closets.png" alt="Closet planejado com nichos e iluminação"
+             loading="lazy" decoding="async"
+             class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+        <figcaption class="sr-only">Closet com organização sob medida</figcaption>
+      </figure>
+
+      <div class="p-6 flex flex-col gap-4">
+        <h3 class="text-2xl text-[#014421] font-bold tracking-tight"
+            style="font-family:'Playfair Display', ui-serif, Georgia, serif">
+          Closets
+        </h3>
+        <p class="text-[#2e2e2e] text-sm leading-relaxed">
+          Organização e sofisticação para guardar tudo com estilo e praticidade.
+        </p>
+        <a href="#contato"
+           class="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-[#014421] hover:text-[#837467] focus:outline-none focus:ring-2 focus:ring-[#014421]/30 rounded transition">
+          Solicitar Projeto
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </li>
+
+    <!-- ✅ CARD -->
+    <li class="bg-white rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.15)] transition-all duration-300 group">
+      <figure class="relative aspect-[4/3] overflow-hidden rounded-t-3xl">
+        <img src="Salas.png" alt="Sala planejada com painel e estante"
+             loading="lazy" decoding="async"
+             class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+        <figcaption class="sr-only">Sala com marcenaria integrada</figcaption>
+      </figure>
+
+      <div class="p-6 flex flex-col gap-4">
+        <h3 class="text-2x2 text-[#014421] font-bold tracking-tight"
+            style="font-family:'Playfair Display', ui-serif, Georgia, serif">
+          Salas
+        </h3>
+        <p class="text-[#2e2e2e] text-sm leading-relaxed">
+          Ambientes integrados e modernos para receber bem e relaxar com conforto.
+        </p>
+        <a href="#contato"
+           class="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-[#014421] hover:text-[#837467] focus:outline-none focus:ring-2 focus:ring-[#014421]/30 rounded transition">
+          Solicitar Projeto
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </li>
+
+    <!-- ✅ CARD -->
+    <li class="bg-white rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.15)] transition-all duration-300 group">
+      <figure class="relative aspect-[4/3] overflow-hidden rounded-t-3xl">
+        <img src="HomeOffice.png" alt="Home office planejado com bancada e nichos"
+             loading="lazy" decoding="async"
+             class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+        <figcaption class="sr-only">Ambiente de trabalho planejado</figcaption>
+      </figure>
+
+      <div class="p-6 flex flex-col gap-4">
+        <h3 class="text-2xl text-[#014421] font-bold tracking-tight"
+            style="font-family:'Playfair Display', ui-serif, Georgia, serif">
+          Home Office
+        </h3>
+        <p class="text-[#2e2e2e] text-sm leading-relaxed">
+          Praticidade e ergonomia para o seu ambiente de trabalho em casa.
+        </p>
+        <a href="#contato"
+           class="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-[#014421] hover:text-[#837467] focus:outline-none focus:ring-2 focus:ring-[#014421]/30 rounded transition">
+          Solicitar Projeto
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </li>
+
+    <!-- ✅ CARD -->
+    <li class="bg-white rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.15)] transition-all duration-300 group">
+      <figure class="relative aspect-[4/3] overflow-hidden rounded-t-3xl">
+        <img src="Banheiros.png" alt="Banheiro planejado com marcenaria e espelho"
+             loading="lazy" decoding="async"
+             class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+        <figcaption class="sr-only">Banheiro com soluções sob medida</figcaption>
+      </figure>
+
+      <div class="p-6 flex flex-col gap-4">
+        <h3 class="text-2xl text-[#014421] font-bold tracking-tight"
+            style="font-family:'Playfair Display', ui-serif, Georgia, serif">
+          Banheiros
+        </h3>
+        <p class="text-[#2e2e2e] text-sm leading-relaxed">
+          Beleza e funcionalidade até nos menores espaços com soluções sob medida.
+        </p>
+        <a href="#contato"
+           class="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-[#014421] hover:text-[#837467] focus:outline-none focus:ring-2 focus:ring-[#014421]/30 rounded transition">
+          Solicitar Projeto
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </li>
+
+  </ul>
+</section>
+
+
+<!-- 🔰 DIVISOR ENTRE BLOCOS -->
+<div class="bg-[#D0D8C3] py-12">
+  <div class="flex justify-center items-center">
+    <div class="w-full max-w-5xl border-t border-[#b9cbb2] relative">
+      <div class="absolute left-1/2 transform -translate-x-1/2 -top-3 bg-[#D0D8C3] px-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#837467]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2l2.39 7.26L22 9.27l-5.64 4.15L18.76 21 12 17.27 5.24 21l2.38-7.58L2 9.27l7.61-1.01L12 2z" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- 💬 DEPOIMENTOS CASAMILANO — V2 (acessível, leve, SEO-ready) -->
+<section id="depoimentos" class="bg-[#CBDABF] py-28 px-6 font-sans text-[#3E3E3E]" aria-labelledby="depoimentos-title">
+  <div class="max-w-7xl mx-auto text-center mb-24">
+    <h2 id="depoimentos-title" class="text-5xl font-extrabold text-[#014421]">Depoimentos</h2>
+    <p class="text-lg mt-4 max-w-2xl mx-auto leading-relaxed text-[#3E4E44]">
+      A confiança dos nossos clientes é construída com <span class="text-[#014421] font-semibold">entrega, qualidade</span> e detalhes que fazem a diferença.
+    </p>
+    <div class="w-16 h-1 mt-6 mx-auto bg-[#014421] rounded-full"></div>
+  </div>
+
+  <!-- Grid semântico -->
+  <ul role="list" class="grid gap-12 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+    <!-- CARD 1 -->
+    <li class="bg-white border border-[#dce9d4] rounded-3xl px-10 py-12 shadow-[0_20px_60px_rgba(0,0,0,0.05)] hover:shadow-[0_30px_70px_rgba(0,0,0,0.08)] transition duration-500 ease-in-out opacity-0 translate-y-4"
+        data-aos="fade-up" data-io>
+      <div itemscope itemtype="https://schema.org/Review">
+        <svg class="w-8 h-8 text-[#014421] opacity-50 mb-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7.17 6A5 5 0 0 0 2 11v7a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H5a3 3 0 0 1 2.17-3.84A1 1 0 0 0 7.17 6zm10 0A5 5 0 0 0 12 11v7a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1h-3a3 3 0 0 1 2.17-3.84A1 1 0 0 0 17.17 6z"/>
+        </svg>
+
+        <blockquote class="text-[1.1rem] leading-[1.7] italic text-[#2F2F2F]" itemprop="reviewBody">
+          “A <span class="font-bold text-[#014421]">Casamilano</span> elevou nosso projeto para outro nível. Cada detalhe foi pensado com carinho e o resultado final <span class="text-[#1d8e67] font-semibold">superou nossas expectativas</span>.”
+        </blockquote>
+
+        <div class="mt-6 flex items-center justify-between gap-4">
+          <div>
+            <div class="text-sm font-semibold uppercase text-[#014421] tracking-wide" itemprop="author">FERNANDA A.</div>
+            <div class="text-xs text-[#888] mt-1">Nota 5.0 • Projeto entregue em 2024</div>
+          </div>
+
+          <!-- Estrelas acessíveis -->
+          <div class="flex gap-1 text-[#FFD700]" aria-label="Nota 5 de 5">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+        </div>
+
+        <!-- microdados de rating -->
+        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+          <meta itemprop="ratingValue" content="5"/>
+          <meta itemprop="bestRating" content="5"/>
+          <meta itemprop="worstRating" content="1"/>
+        </div>
+
+        <span class="inline-block mt-4 bg-[#014421] text-white text-[11px] font-bold px-4 py-[6px] rounded-full shadow-sm tracking-wider">
+          PROJETO REALIZADO
+        </span>
+      </div>
+    </li>
+
+    <!-- CARD 2 -->
+    <li class="bg-white border border-[#dce9d4] rounded-3xl px-10 py-12 shadow-[0_20px_60px_rgba(0,0,0,0.05)] hover:shadow-[0_30px_70px_rgba(0,0,0,0.08)] transition duration-500 ease-in-out opacity-0 translate-y-4"
+        data-aos="fade-up" data-aos-delay="100" data-io>
+      <div itemscope itemtype="https://schema.org/Review">
+        <svg class="w-8 h-8 text-[#014421] opacity-50 mb-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7.17 6A5 5 0 0 0 2 11v7a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H5a3 3 0 0 1 2.17-3.84A1 1 0 0 0 7.17 6zm10 0A5 5 0 0 0 12 11v7a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1h-3a3 3 0 0 1 2.17-3.84A1 1 0 0 0 17.17 6z"/>
+        </svg>
+
+        <blockquote class="text-[1.1rem] leading-[1.7] italic text-[#2F2F2F]" itemprop="reviewBody">
+          “Ótimo atendimento, excelente acabamento e <span class="text-[#1d8e67] font-semibold">entrega no prazo</span>. Recomendo de olhos fechados!”
+        </blockquote>
+
+        <div class="mt-6 flex items-center justify-between gap-4">
+          <div>
+            <div class="text-sm font-semibold uppercase text-[#014421] tracking-wide" itemprop="author">LUCAS M.</div>
+            <div class="text-xs text-[#888] mt-1">Nota 5.0 • Quarto e closet</div>
+          </div>
+          <div class="flex gap-1 text-[#FFD700]" aria-label="Nota 5 de 5">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+        </div>
+
+        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+          <meta itemprop="ratingValue" content="5"/><meta itemprop="bestRating" content="5"/><meta itemprop="worstRating" content="1"/>
+        </div>
+
+        <span class="inline-block mt-4 bg-[#014421] text-white text-[11px] font-bold px-4 py-[6px] rounded-full shadow-sm tracking-wider">
+          PROJETO REALIZADO
+        </span>
+      </div>
+    </li>
+
+    <!-- CARD 3 -->
+    <li class="bg-white border border-[#dce9d4] rounded-3xl px-10 py-12 shadow-[0_20px_60px_rgba(0,0,0,0.05)] hover:shadow-[0_30px_70px_rgba(0,0,0,0.08)] transition duration-500 ease-in-out opacity-0 translate-y-4"
+        data-aos="fade-up" data-aos-delay="200" data-io>
+      <div itemscope itemtype="https://schema.org/Review">
+        <svg class="w-8 h-8 text-[#014421] opacity-50 mb-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7.17 6A5 5 0 0 0 2 11v7a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H5a3 3 0 0 1 2.17-3.84A1 1 0 0 0 7.17 6zm10 0A5 5 0 0 0 12 11v7a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1h-3a3 3 0 0 1 2.17-3.84A1 1 0 0 0 17.17 6z"/>
+        </svg>
+
+        <blockquote class="text-[1.1rem] leading-[1.7] italic text-[#2F2F2F]" itemprop="reviewBody">
+          “Qualidade de verdade. Atendimento personalizado do início ao fim. <span class="text-[#1d8e67] font-semibold">A sala ficou maravilhosa!</span>”
+        </blockquote>
+
+        <div class="mt-6 flex items-center justify-between gap-4">
+          <div>
+            <div class="text-sm font-semibold uppercase text-[#014421] tracking-wide" itemprop="author">JULIANA R.</div>
+            <div class="text-xs text-[#888] mt-1">Nota 5.0 • Sala planejada</div>
+          </div>
+          <div class="flex gap-1 text-[#FFD700]" aria-label="Nota 5 de 5">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+        </div>
+
+        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+          <meta itemprop="ratingValue" content="5"/><meta itemprop="bestRating" content="5"/><meta itemprop="worstRating" content="1"/>
+        </div>
+
+        <span class="inline-block mt-4 bg-[#014421] text-white text-[11px] font-bold px-4 py-[6px] rounded-full shadow-sm tracking-wider">
+          PROJETO REALIZADO
+        </span>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<!-- 🔧 Fallback de animação se AOS não estiver carregado -->
+<script>
+  (function(){
+    if (window.AOS && typeof window.AOS.init === 'function') { AOS.init(); return; }
+    const els = document.querySelectorAll('[data-io]');
+    if (!('IntersectionObserver' in window) || !els.length) {
+      els.forEach(el => { el.classList.remove('opacity-0','translate-y-4'); });
+      return;
+    }
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(!e.isIntersecting) return;
+        e.target.classList.remove('opacity-0','translate-y-4');
+        io.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.2 });
+    els.forEach(el => io.observe(el));
+  })();
+</script>
+
+<!-- 🔰 DIVISOR ENTRE BLOCOS (mantido) -->
+<div class="bg-[#D0D8C3] py-12">
+  <div class="flex justify-center items-center">
+    <div class="w-full max-w-5xl border-t border-[#b9cbb2] relative">
+      <div class="absolute left-1/2 transform -translate-x-1/2 -top-3 bg-[#D0D8C3] px-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#837467]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2l2.39 7.26L22 9.27l-5.64 4.15L18.76 21 12 17.27 5.24 21l2.38-7.58L2 9.27l7.61-1.01L12 2z" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- 🔰 CONTATO + FORM + FAQ — V2 (leve, acessível, LGPD-ready) -->
+<section id="contato" class="bg-[#D0D8C3] py-24 px-4 md:px-10 text-[#014421] font-sans" aria-labelledby="contato-title">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 id="contato-title" class="text-3xl md:text-5xl font-extrabold mb-12 md:mb-16 leading-tight">
+      Fale <span class="italic text-[#837467] font-medium">Conosco</span>
+    </h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-start">
+      <!-- FORM WhatsApp -->
+      <form id="contato-form" novalidate
+            class="bg-white/80 backdrop-blur-md p-10 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.08)] flex flex-col gap-6 max-w-lg mx-auto w-full transition hover:shadow-[0_30px_70px_rgba(0,0,0,0.12)] duration-300">
+
+        <!-- Honeypot anti-spam -->
+        <input type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" class="hidden">
+
+        <div>
+          <label for="nome-contato" class="font-semibold text-[#014421]">Nome completo</label>
+          <input type="text" id="nome-contato" name="nome" placeholder="Ex.: Ana Silva" required
+                 autocomplete="name" enterkeyhint="next"
+                 class="w-full p-4 mt-2 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#014421] transition duration-200">
+        </div>
+
+        <div>
+          <label for="email-contato" class="font-semibold text-[#014421]">E-mail</label>
+          <input type="email" id="email-contato" name="email" placeholder="Ex.: ana@email.com" required
+                 autocomplete="email" inputmode="email" enterkeyhint="next"
+                 class="w-full p-4 mt-2 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#014421] transition duration-200">
+        </div>
+
+        <div>
+          <label for="mensagem-contato" class="font-semibold text-[#014421]">Mensagem</label>
+          <textarea id="mensagem-contato" name="mensagem" placeholder="Descreva seu projeto..." required
+                    class="w-full p-4 mt-2 h-36 rounded-xl border border-gray-300 resize-none focus:outline-none focus:ring-2 focus:ring-[#014421] transition duration-200"></textarea>
+        </div>
+
+        <label class="flex items-start gap-3 text-sm text-[#014421]/90">
+          <input id="consent-contato" type="checkbox" required class="mt-1">
+          <span>Concordo em ser contactado(a) por WhatsApp e e-mail, conforme a <a href="#lgpd" class="underline font-medium">política de privacidade</a>.</span>
+        </label>
+
+        <div id="msg-contato" class="text-sm min-h-[1.25rem] text-center font-semibold" aria-live="polite"></div>
+
+        <button id="btn-contato" type="submit"
+                class="bg-[#014421] text-white py-3 rounded-xl font-semibold hover:scale-105 transition transform duration-300 shadow-md disabled:opacity-60 disabled:cursor-not-allowed">
+          Enviar Mensagem
+        </button>
+      </form>
+
+      <!-- INFO + FAQ -->
+      <div class="flex flex-col gap-8 max-w-xl mx-auto">
+        <!-- TELEFONE -->
+        <a href="tel:+5548996103887"
+           class="bg-white p-6 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.05)] flex items-center gap-5 transition hover:scale-[1.02] duration-300 focus:outline-none focus:ring-2 focus:ring-[#014421]/30">
+          <div class="bg-[#014421] text-white p-3 rounded-full shadow-md">
+            <svg class="w-6 h-6" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a16 16 0 00116 16l2-2a2 2 0 00-.3-3.1l-3.7-1.3a2 2 0 00-2.3.5l-1.3 1.3a12.5 12.5 0 01-5.2-5.2l1.3-1.3a2 2 0 00.5-2.3L9.1 5.3A2 2 0 006 5l-2 2z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="font-bold text-[#014421]">Telefone</p>
+            <p class="text-gray-700">(48) 99610-3887</p>
+          </div>
+        </a>
+
+        <!-- E-MAIL -->
+        <a href="mailto:casamilanocomercial@gmail.com?subject=Or%C3%A7amento%20Casamilano"
+           class="bg-white p-6 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.05)] flex items-center gap-5 transition hover:scale-[1.02] duration-300 focus:outline-none focus:ring-2 focus:ring-[#014421]/30 break-words">
+          <div class="bg-[#014421] text-white p-3 rounded-full shadow-md">
+            <svg class="w-6 h-6" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 4h16v16H4V4zm2 4l6 4 6-4"/>
+            </svg>
+          </div>
+          <div>
+            <p class="font-bold text-[#014421]">E-mail</p>
+            <p class="text-gray-700">casamilanocomercial@gmail.com</p>
+          </div>
+        </a>
+
+        <!-- FAQ acessível -->
+        <div class="bg-white p-8 rounded-3xl shadow-[0_15px_40px_rgba(0,0,0,0.06)]">
+          <h3 class="text-xl font-extrabold text-[#014421] flex items-center gap-3 mb-6">
+            <svg class="w-6 h-6" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+            Perguntas Frequentes
+          </h3>
+          <div class="space-y-3 text-sm sm:text-[15px] leading-relaxed text-[#3E3E3E]">
+            <details class="group rounded-xl border border-[#e6efe0] p-4 open:bg-[#f7faf6] transition">
+              <summary class="cursor-pointer font-semibold list-none flex items-center justify-between">
+                <span>⏱ Quanto tempo leva para entregar um projeto?</span>
+                <span class="ml-4 transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <p class="mt-2 text-gray-700">De 20 a 30 dias úteis, conforme o escopo e complexidade.</p>
+            </details>
+
+            <details class="group rounded-xl border border-[#e6efe0] p-4 open:bg-[#f7faf6] transition">
+              <summary class="cursor-pointer font-semibold list-none flex items-center justify-between">
+                <span>📐 Vocês fazem projetos sob medida?</span>
+                <span class="ml-4 transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <p class="mt-2 text-gray-700">Sim — 100% personalizado para o seu espaço e necessidade.</p>
+            </details>
+
+            <details class="group rounded-xl border border-[#e6efe0] p-4 open:bg-[#f7faf6] transition">
+              <summary class="cursor-pointer font-semibold list-none flex items-center justify-between">
+                <span>💳 Posso parcelar meu projeto?</span>
+                <span class="ml-4 transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <p class="mt-2 text-gray-700">Até 10x no cartão. Condições podem variar conforme o projeto.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ Script: WA com validação, consentimento e feedback -->
+<script>
+  (function(){
+    const PHONE = '5548996103887';
+    const form = document.getElementById('contato-form');
+    if (!form) return;
+
+    const btn = document.getElementById('btn-contato');
+    const out = document.getElementById('msg-contato');
+
+    const emailOk = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // honeypot
+      if (form.website?.value) return;
+
+      const nome = form.nome.value.trim();
+      const email = form.email.value.trim();
+      const msg = form.mensagem.value.trim();
+      const consent = document.getElementById('consent-contato').checked;
+
+      if (!nome || !email || !msg) {
+        out.textContent = 'Preencha nome, e-mail e a mensagem.';
+        out.className = 'text-sm min-h-[1.25rem] text-center font-semibold text-red-600';
+        form.scrollIntoView({behavior:'smooth', block:'center'});
+        return;
+      }
+      if (!emailOk(email)) {
+        out.textContent = 'E-mail inválido.';
+        out.className = 'text-sm min-h-[1.25rem] text-center font-semibold text-red-600';
+        return;
+      }
+      if (!consent) {
+        out.textContent = 'Confirme o consentimento para continuar.';
+        out.className = 'text-sm min-h-[1.25rem] text-center font-semibold text-red-600';
+        return;
+      }
+
+      const texto = `👋 Olá! Gostaria de um orçamento.
+
+👤 Nome: ${nome}
+📧 E-mail: ${email}
+📝 Mensagem: ${msg}`;
+
+      const url = `https://wa.me/${PHONE}?text=${encodeURIComponent(texto)}`;
+
+      btn.disabled = true;
+      out.textContent = 'Abrindo WhatsApp…';
+      out.className = 'text-sm min-h-[1.25rem] text-center font-semibold text-green-700';
+
+      // abrir em nova aba com segurança
+      window.open(url, '_blank', 'noopener');
+
+      // reabilita após breve intervalo (evita spam de cliques)
+      setTimeout(() => { btn.disabled = false; }, 1500);
+    });
+  })();
+</script>
+
+
+
+
+
+
+
+
+<!-- 🌍 BLOCO MAPA ATUALIZADO -->
+<section class="py-24 bg-[#D0D8C3]">
+  <div class="max-w-7xl mx-auto px-4 text-center">
+    <h2 class="text-4xl md:text-5xl font-bold text-[#014421] mb-12">
+      Nossa Localização
+    </h2>
+
+ <!-- 📍 MAPA COM PINO MARCADO NA RUA PARÁ 368 -->
+<div class="rounded-3xl overflow-hidden shadow-2xl border border-[#b9cbb2] aspect-[16/9]">
+  <iframe
+    title="Localização: Rua Pará, 368 - Universitário, Tijucas - SC"
+    src="https://www.google.com/maps?q=Rua+Pará,+368,+Universitário,+Tijucas,+SC&output=embed"
+    class="w-full h-full"
+    style="border:0;" allowfullscreen="" loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+
+  </div>
+</section>
+
+
+
+<!-- 🔻 RODAPÉ COM VÍDEO DE FUNDO E ÍCONES MODERNOS -->
+<footer class="relative text-[#D0D8C3] font-[Poppins] overflow-hidden">
+  <!-- 🎥 VÍDEO DE FUNDO -->
+  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+    <source src="rodape.mp4" type="video/mp4">
+  </video>
+
+  <!-- 🔲 CAMADA ESCURA PARA CONTRASTE -->
+  <div class="absolute inset-0 bg-black/80 z-10"></div>
+
+  <!-- 🔳 CONTEÚDO DO RODAPÉ -->
+  <div class="relative z-20 max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-12">
+
+    <!-- ℹ️ SOBRE -->
+    <div>
+      <h3 class="text-xl font-bold mb-4">Casamilano</h3>
+      <p class="text-base leading-relaxed">
+        Ambientes planejados com elegância, conforto e funcionalidade.<br>
+        Mais de 15 anos realizando sonhos em forma de móveis sob medida.
+      </p>
+    </div>
+
+    <!-- 🔗 NAVEGAÇÃO -->
+    <div>
+      <h3 class="text-xl font-bold mb-4">Navegação</h3>
+      <ul class="space-y-2">
+        <li><a href="#inicio" class="hover:underline">Início</a></li>
+        <li><a href="#sobre" class="hover:underline">Sobre</a></li>
+        <li><a href="#ambientes" class="hover:underline">Ambientes</a></li>
+        <li><a href="#portfolio" class="hover:underline">Portfólio</a></li>
+        <li><a href="#contato" class="hover:underline">Contato</a></li>
+      </ul>
+    </div>
+
+    <!-- 📞 CONTATO -->
+    <div>
+      <h3 class="text-xl font-bold mb-4">Contato</h3>
+      <ul class="space-y-3 text-base">
+        <li class="flex items-start gap-2">
+          <!-- 📍 Localização -->
+          <svg class="w-5 h-5 mt-1 text-[#D0D8C3]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 2C8.134 2 5 5.134 5 9c0 4.25 6.5 11 7 11s7-6.75 7-11c0-3.866-3.134-7-7-7z" />
+            <circle cx="12" cy="9" r="2.5" fill="currentColor"/>
+          </svg>
+        Rua Pará, N368, Universitário, Tijucas - SC, 88201-544
+
+        </li>
+        <li class="flex items-center gap-2">
+          <!-- 📞 Telefone -->
+          <svg class="w-5 h-5 text-[#D0D8C3]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h1a2 2 0 012 2v.6a2 2 0 01-.6 1.4l-.9.9a16 16 0 007.6 7.6l.9-.9a2 2 0 011.4-.6h.6a2 2 0 012 2v1a2 2 0 01-2 2h-.4A19 19 0 013 5.4V5z" />
+          </svg>
+          (48) 99610-3887
+        </li>
+        <li class="flex items-center gap-2">
+          <!-- ✉️ E-mail -->
+          <svg class="w-5 h-5 text-[#D0D8C3]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          casamilanocomercial@gmail.com
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ⚠️ COPYRIGHT -->
+  <div class="relative z-20 text-center text-sm py-4 bg-black/90">
+    © 2025 Casamilano. Todos os direitos reservados.
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+<!-- ✅ ÍCONE WHATSAPP FLUTUANTE -->
+<div class="whatsapp-toggle" id="whatsapp-toggle" title="Fale direto no WhatsApp">
+  <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp">
+</div>
+
+<!-- ✅ CAIXA DE MENSAGEM WHATSAPP -->
+<div class="whatsapp-box" id="whatsapp-box">
+  <div class="whatsapp-close" id="whatsapp-close">✕</div>
+  <div class="whatsapp-header">💬 Fale direto no WhatsApp!</div>
+  <textarea id="whatsapp-message" rows="3" placeholder="Ex.: Olá! Estou interessado no seu serviço."></textarea>
+  <button id="whatsapp-send">Iniciar Conversa</button>
+</div>
+
+<!-- ✅ JAVASCRIPT PARA FUNCIONAMENTO -->
+<script>
+const whatsappToggle = document.getElementById('whatsapp-toggle');
+const whatsappBox = document.getElementById('whatsapp-box');
+const whatsappSend = document.getElementById('whatsapp-send');
+const whatsappMessage = document.getElementById('whatsapp-message');
+const whatsappClose = document.getElementById('whatsapp-close');
+
+whatsappToggle.addEventListener('click', () => {
+  whatsappBox.classList.toggle('show');
+});
+
+whatsappClose.addEventListener('click', () => {
+  whatsappBox.classList.remove('show');
+});
+
+whatsappSend.addEventListener('click', () => {
+  const message = encodeURIComponent(whatsappMessage.value.trim() || 'Olá! Estou interessado no seu serviço.');
+  window.open(`https://wa.me/5511987654321?text=${message}`, '_blank');
+  whatsappMessage.value = '';
+  whatsappBox.classList.remove('show');
+});
+</script>
+
+
+
+<!-- AOS (Animação ao rolar) -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+
+<!-- Vanilla Tilt (efeito 3D) -->
+<script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+<script>
+  VanillaTilt.init(document.querySelectorAll(".card-ambiente"), {
+    max: 8,
+    speed: 400,
+    glare: true,
+    "max-glare": 0.2
+  });
+</script>
+
+ 
+
+
+
+
+<!-- 🔊 Música de fundo com autoplay e botão -->
+<audio id="bgMusic" loop>
+  <source src="musica.mp3" type="audio/mpeg">
+  Seu navegador não suporta áudio HTML5.
+</audio>
+
+
+
+</body>
+</html>
